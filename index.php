@@ -58,7 +58,8 @@ function city_selected($city, $selected_city){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!--local bootstrap link-->
+    <link href="./assets/styles/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-dark text-white">
     <div class="container-fluid mt-5">
