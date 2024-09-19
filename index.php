@@ -43,6 +43,13 @@ foreach($data['forecast']['forecastday'] as $day){
     $forecast_day['min_temp'] = $day['day']['mintemp_c'];
     $forecast[] = $forecast_day;
 }
+
+function city_selected($city, $selected_city){
+    if($city == $selected_city){
+        return 'selected';
+    }
+    return '';
+}
 ?>
 
 <!DOCTYPE html>
@@ -66,18 +73,18 @@ foreach($data['forecast']['forecastday'] as $day){
                 </div>
                 <div class="col-3 text-end">
                     <select class="form-select">
-                        <option value="Aveiro">Aveiro</option>
-                        <option value="Porto">Porto</option>
-                        <option value="Singapure">Singapure</option>
-                        <option value="Valleta">Valleta</option>
-                        <option value="München">München</option>
-                        <option value="Luanda">Luanda</option>
-                        <option value="Madrid">Madrid</option>
-                        <option value="Bern">Bern</option>
-                        <option value="Praga">Praga</option>
-                        <option value="Paria">Paris</option>
-                        <option value="Oslo">Oslo</option>
-                        <option value="London">London</option>
+                        <option value="Aveiro" <?= city_selected('Lisbon', $city) ?>>Aveiro</option>
+                        <option value="Copenhagen"<?= city_selected('Copenhagen', $city)?>>Copenhagen</option>
+                        <option value="Stockholm"<?= city_selected('Stockholm', $city)?>>Stockholm</option>
+                        <option value="Malta"<?= city_selected('Malta', $city) ?>>Malta</option>
+                        <option value="Munich"<?= city_selected('Munich', $city) ?>>Munich</option>
+                        <option value="Luanda"<?= city_selected('Luanda', $city) ?>>Luanda</option>
+                        <option value="Madrid" <?= city_selected('Madrid', $city) ?>>Madrid</option>
+                        <option value="Bern" <?= city_selected('Bern', $city) ?>>Bern</option>
+                        <option value="Prague" <?= city_selected('Prague', $city) ?>>Prague</option>
+                        <option value="Paris" <?= city_selected('Paris', $city)?>>Paris</option>
+                        <option value="Oslo" <?= city_selected('Oslo', $city)?>>Oslo</option>
+                        <option value="London" <?= city_selected('London', $city)?>>London</option>
                     </select>
                 </div>
             </div>
