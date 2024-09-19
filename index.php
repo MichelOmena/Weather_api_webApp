@@ -2,7 +2,7 @@
 require_once 'inc/config.php';
 require_once  'inc/api.php';
 
-$city = 'Lisbon'; // Depois criar um script para usar uma API de geolocalizacao e através do IP do usuario saber a região e dizer o tempo naquela localidade
+$city = 'Aveiro'; // Depois criar um script para usar uma API de geolocalizacao e através do IP do usuario saber a região e dizer o tempo naquela localidade
 $days = 5;
 
 $results = Api::get($city, $days);
@@ -54,7 +54,34 @@ foreach($data['forecast']['forecastday'] as $day){
     <div class="container-fluid mt-5">
     <div class="row justify-content-center mt-5">
         <div class="col-10 p-5 bg-light text-black">
-            <h3>City Time <strong><?= $city ?></strong></h3>
+
+
+            <div class="row">
+                <div class="col-9">
+                    <h3>City Time <strong><?= $location['name'] ?></strong></h3>
+                    <p class="my-2">Region: <?= $location['region'] ?> | <?= $location['country'] ?> | <?= $location['current_time'] ?> | Previsão para <strong><?= $days ?></strong> dias</p>
+                </div>
+                <div class="col-3 text-end">
+                    <select class="form-select">
+                        <option value="Aveiro">Aveiro</option>
+                        <option value="Porto">Porto</option>
+                        <option value="Singapure">Singapure</option>
+                        <option value="Valleta">Valleta</option>
+                        <option value="München">München</option>
+                        <option value="Luanda">Luanda</option>
+                        <option value="Madrid">Madrid</option>
+                        <option value="Bern">Bern</option>
+                        <option value="Praga">Praga</option>
+                        <option value="Paria">Paris</option>
+                        <option value="Oslo">Oslo</option>
+                        <option value="London">London</option>
+                    </select>
+                </div>
+            </div>
+            
+
+
+           
             <hr>
 
             <!-- current -->
