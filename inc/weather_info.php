@@ -10,7 +10,7 @@
          </div>
          <?php if(!empty($weather_info['temperature'])) : ?>
             <div class="me-5">
-                <h3><?= $weather_info['temperature']?>&deg;</h3>
+                <h3><?= $weather_info['temperature'] ?>&deg;</h3>
             </div>
          <?php endif;?>
          <div class="me-5">
@@ -19,7 +19,13 @@
 
          <?php if(!empty($weather_info['max_temp'])) : ?>
             <div class="me-5">
-                Dia: <?= $weather_info['date'] ?>
+                Day: <?= $weather_info['date'] ?>
+            </div>
+            <div class="me-5">
+                Max temperature: <?= $weather_info['max_temp'] ?>&deg;
+            </div>
+            <div class="me-5">
+                Min temperature: <?= $weather_info['min_temp'] ?>&deg;
             </div>
          <?php endif; ?>
     </div>

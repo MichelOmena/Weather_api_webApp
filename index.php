@@ -35,7 +35,7 @@ foreach($data['forecast']['forecastday'] as $day){
     $forecast_day['info'] = null;
     $forecast_day['date'] = $day['date'];
     $forecast_day['condition'] = $day['day']['condition']['text'];
-    $forecast_day['condition'] = $day['day']['condition']['icon'];
+    $forecast_day['condition_icon'] = $day['day']['condition']['icon'];
     $forecast_day['max_temp'] = $day['day']['maxtemp_c'];
     $forecast_day['min_temp'] = $day['day']['mintemp_c'];
     $forecast[] = $forecast_day;
@@ -51,6 +51,7 @@ foreach($data['forecast']['forecastday'] as $day){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body class="bg-dark text-white">
+    <div class="container-fluid mt-5">
     <div class="row justify-content-center mt-5">
         <div class="col-10 p-5 bg-light text-black">
             <h3>City Time <strong><?= $city ?></strong></h3>
@@ -61,11 +62,15 @@ foreach($data['forecast']['forecastday'] as $day){
              $weather_info = $current;
              include 'inc/weather_info.php';
              ?>
-             <?php ?>
-             <?php ?>
-             <?php ?>
+             <!--forecast-->
+             <?php foreach($forecast as $day) : ?>
+             <?php 
+                $weather_info = $day;
+                include 'inc/weather_info.php';
+             ?>
+                <?php endforeach; ?>
+            </div>
         </div>
-
     </div>
 </body>
 </html>
