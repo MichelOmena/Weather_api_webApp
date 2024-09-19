@@ -22,7 +22,7 @@ $location['current_time'] = $data['location']['localtime'];
 
 //current weather data
 $current = [];
-$current['info'] = 'right now';
+$current['info'] = 'right now:';
 $current['temperature'] = $data['current']['temp_c']; 
 $current['condition'] = $data['current']['condition']['text'];
 $current['condition_icon'] = $data['current']['condition']['icon'];
@@ -48,7 +48,7 @@ foreach($data['forecast']['forecastday'] as $day){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body class="bg-dark text-white">
     <div class="row justify-content-center mt-5">
