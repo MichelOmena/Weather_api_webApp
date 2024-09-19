@@ -3,6 +3,9 @@ require_once 'inc/config.php';
 require_once  'inc/api.php';
 
 $city = 'Aveiro'; // Depois criar um script para usar uma API de geolocalizacao e através do IP do usuario saber a região e dizer o tempo naquela localidade
+if(isset($_GET['city'])){
+    $city = $_GET['city'];
+}
 $days = 5;
 
 $results = Api::get($city, $days);
@@ -78,10 +81,7 @@ foreach($data['forecast']['forecastday'] as $day){
                     </select>
                 </div>
             </div>
-            
-
-
-           
+       
             <hr>
 
             <!-- current -->
@@ -99,6 +99,14 @@ foreach($data['forecast']['forecastday'] as $day){
             </div>
         </div>
     </div>
+
+    <script>
+        const select = document.querySelector('select');
+        select.addEventListener('change', (e) =>{
+            const city = e.target.value;
+            window.location.href = `index.php?city=${city}`;
+        })
+    </script>
 </body>
 </html>
 
