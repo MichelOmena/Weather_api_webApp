@@ -36,8 +36,8 @@ foreach($data['forecast']['forecastday'] as $day){
     $forecast_day['date'] = $day['date'];
     $forecast_day['condition'] = $day['day']['condition']['text'];
     $forecast_day['condition'] = $day['day']['condition']['icon'];
-    $forecast_day['max_temp'] = $day['date']['maxtemp_c'];
-    $forecast_day['min_temp'] = $day['date']['mintemp_c'];
+    $forecast_day['max_temp'] = $day['day']['maxtemp_c'];
+    $forecast_day['min_temp'] = $day['day']['mintemp_c'];
     $forecast[] = $forecast_day;
 }
 
